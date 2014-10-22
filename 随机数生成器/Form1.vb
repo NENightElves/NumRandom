@@ -110,6 +110,7 @@
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '213
         ff = False
         If My.Computer.FileSystem.FileExists("random.txt") Then
             FileOpen(1, "random.txt", OpenMode.Input)
