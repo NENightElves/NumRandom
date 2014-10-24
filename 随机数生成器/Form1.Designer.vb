@@ -34,9 +34,9 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(43, 134)
+        Me.Button1.Location = New System.Drawing.Point(33, 233)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(100, 30)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "随机"
         Me.Button1.UseVisualStyleBackColor = True
@@ -75,11 +75,11 @@ Partial Class Form1
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(22, 180)
+        Me.TextBox4.Location = New System.Drawing.Point(22, 131)
         Me.TextBox4.Multiline = True
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBox4.Size = New System.Drawing.Size(123, 71)
+        Me.TextBox4.Size = New System.Drawing.Size(123, 79)
         Me.TextBox4.TabIndex = 5
         '
         'TextBox3

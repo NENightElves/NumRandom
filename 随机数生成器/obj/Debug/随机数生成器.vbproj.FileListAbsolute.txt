@@ -1,0 +1,9 @@
+G:\NumRandom\随机数生成器\bin\Debug\随机数生成器.exe
+G:\NumRandom\随机数生成器\bin\Debug\随机数生成器.pdb
+G:\NumRandom\随机数生成器\bin\Debug\随机数生成器.xml
+G:\NumRandom\随机数生成器\obj\Debug\随机数生成器.Form1.resources
+G:\NumRandom\随机数生成器\obj\Debug\随机数生成器.Resources.resources
+G:\NumRandom\随机数生成器\obj\Debug\随机数生成器.vbproj.GenerateResource.Cache
+G:\NumRandom\随机数生成器\obj\Debug\随机数生成器.exe
+G:\NumRandom\随机数生成器\obj\Debug\随机数生成器.xml
+G:\NumRandom\随机数生成器\obj\Debug\随机数生成器.pdb

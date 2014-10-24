@@ -1,5 +1,13 @@
 ﻿Module Module1
 
+    Public Structure locastru
+        Dim x As Single
+        Dim y As Single
+        Dim a As Single
+        Dim b As Single
+    End Structure
+
+
     Public Sub swap(ByRef a As Integer, ByRef b As Integer)
         '交换数据
         Dim t As Integer

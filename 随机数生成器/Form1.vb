@@ -3,7 +3,27 @@
     'a数组为主数组，b数组为去重数组，c数组为后台主数组
     'na,nb,nc指向各自数组的最后一个元素
     're代表结果
-    Public ff As Boolean
+    Public ff, fff As Boolean
+    Dim obj(100) As locastru
+
+    Private Sub iobj(ByVal n As Integer, ByVal x As Object)
+        obj(n).x = x.Location.X / Me.Width
+        obj(n).y = x.Location.Y / Me.Height
+        obj(n).a = x.Width / Me.Width
+        obj(n).b = x.Height / Me.Height
+    End Sub
+
+    Private Sub robj(ByVal n As Integer, ByVal x As Object)
+        x.Location = New Point(obj(n).x * Me.Location.X, obj(n).y * Me.Location.Y)
+        x.Width = obj(n).a * Me.Width
+        x.Height = obj(n).b * Me.Height
+    End Sub
+
+    Private Sub rrobj(ByVal r As Object, ByVal x As Single, ByVal y As Single, ByVal a As Single, ByVal b As Single)
+        r.Location = New Point(Me.Width * x, Me.Height * y)
+        r.Width = a * Me.Width
+        r.Height = b * Me.Height
+    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
@@ -111,7 +131,13 @@
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '213
+        'iobj(1, Label1)
+        'iobj(2, TextBox1)
+        fff = True
         ff = False
+
+        'rrobj(Label1, 1 / 5, 1 / 10, 1 / 3, 1 / 10)
+
         If My.Computer.FileSystem.FileExists("random.txt") Then
             FileOpen(1, "random.txt", OpenMode.Input)
             If LineInput(1) = "force" Then ff = True
@@ -121,5 +147,40 @@
 
     Private Sub Form1_Click(sender As Object, e As EventArgs) Handles MyBase.Click
         If ff = False Then ff = True Else ff = False
+    End Sub
+
+    Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If fff = True Then
+            'robj(1, Label1)
+            'robj(2, TextBox1)
+            'Label1.Location = New Point(obj(1).x * Me.Location.X, obj(1).y * Me.Location.Y)
+            'Label1.Width = obj(1).a * Me.Width
+            'Label1.Height = obj(1).b * Me.Height
+            Label1.Font = New Font("微软雅黑", Me.Width / 20)
+            Label1.Location = New Point(Label1.Location.X, Me.Width / 20 * 2)
+            Label2.Font = New Font("微软雅黑", Me.Width / 20)
+            Label2.Location = New Point(Label2.Location.X, Me.Width / 20 * 5)
+            Label3.Font = New Font("微软雅黑", Me.Width / 20)
+            Label3.Location = New Point(Label3.Location.X, Me.Width / 20 * 8)
+
+            TextBox1.Font = New Font("微软雅黑", Me.Width / 20)
+            TextBox1.Width = Me.Width - TextBox1.Location.X - TextBox1.Width / 5 - 3
+            TextBox1.Location = New Point(Label1.Location.X + Label1.Width + 3, Label1.Location.Y)
+            TextBox2.Font = New Font("微软雅黑", Me.Width / 20)
+            TextBox2.Width = Me.Width - TextBox2.Location.X - TextBox2.Width / 5 - 3
+            TextBox2.Location = New Point(Label2.Location.X + Label2.Width + 3, Label2.Location.Y)
+            TextBox3.Font = New Font("微软雅黑", Me.Width / 20)
+            TextBox3.Width = Me.Width - TextBox3.Location.X - TextBox3.Width / 5 - 3
+            TextBox3.Location = New Point(Label3.Location.X + Label3.Width + 3, Label3.Location.Y)
+            TextBox4.Location = New Point(Label3.Location.X + 50, Label3.Location.Y + Label3.Height + 50)
+            TextBox4.Width = TextBox3.Location.X + TextBox3.Width - Label3.Location.X - 90
+
+            Button1.Location = New Point(Me.Width / 2 - 50, TextBox4.Location.Y + 20 + TextBox4.Height)
+
+            If (Me.Height < (Button1.Location.Y + 70)) Then Me.Height = Button1.Location.Y + 100
+
+
+        End If
+        'rrobj(Label1, 1 / 5, 1 / 10, 1 / 3, 1 / 10)
     End Sub
 End Class
