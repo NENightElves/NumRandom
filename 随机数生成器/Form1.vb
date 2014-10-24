@@ -174,6 +174,8 @@
             TextBox3.Location = New Point(Label3.Location.X + Label3.Width + 3, Label3.Location.Y)
             TextBox4.Location = New Point(Label3.Location.X + 50, Label3.Location.Y + Label3.Height + 50)
             TextBox4.Width = TextBox3.Location.X + TextBox3.Width - Label3.Location.X - 90
+            TextBox4.Height = TextBox3.Height
+            TextBox4.Font = New Font("微软雅黑", Me.Width / 20)
 
             Button1.Location = New Point(Me.Width / 2 - 50, TextBox4.Location.Y + 20 + TextBox4.Height)
 
